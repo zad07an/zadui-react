@@ -14,6 +14,9 @@ export default defineConfig({
   format: ["esm", "cjs"],
   splitting: false,
   bundle: true,
+  outExtension({ format }) {
+    return { js: format === "esm" ? ".mjs" : ".cjs" };
+  },
   async onSuccess() {
     // Process TailwindCSS
     const css = await fs.readFile("ui/index.css", "utf-8");
