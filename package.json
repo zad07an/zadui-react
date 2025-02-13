@@ -1,0 +1,42 @@
+{
+  "name": "zadui-react",
+  "version": "0.0.1",
+  "author": "zad07an",
+  "license": "MIT",
+  "type": "module",
+  "main": "/dist/index.js",
+  "module": "/dist/index.mjs",
+  "types": "/dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zad07an/zadui-react"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "prepare": "rm -rf dist && npm run build",
+    "build": "tsup",
+    "prepublishOnly": "npm version patch --no-git-tag-version"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.13.2",
+    "@types/react": "^19.0.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.6"
+  }
+}
